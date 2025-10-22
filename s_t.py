@@ -51,28 +51,28 @@ st.markdown("""
 # ==========================
 # ENCABEZADO E IMAGEN PRINCIPAL
 # ==========================
-st.markdown("<div class='title'>🎓 EMMA - Tu Asistente Traductora</div>", unsafe_allow_html=True)
-st.markdown("<div class='subtitle'>Habla y deja que Emma traduzca tus palabras al instante 🌍</div>", unsafe_allow_html=True)
+st.markdown("<div class='title'>Voz a texto: EMMA - Tu Asistente Traductora</div>", unsafe_allow_html=True)
+st.markdown("<div class='subtitle'>Habla y deja que Emma traduzca tus palabras al instante </div>", unsafe_allow_html=True)
 
-image = Image.open('OIG7.jpg')
+image = Image.open('emma_voice.jpg')
 st.image(image, width=280, caption="Emma, tu traductora por voz inteligente 🎙️")
 
 # ==========================
 # SIDEBAR
 # ==========================
 with st.sidebar:
-    st.markdown("## 🌐 Panel de Traducción")
+    st.markdown("## Panel de Traducción")
     st.write("Presiona el botón y habla lo que deseas traducir. Luego selecciona los idiomas de entrada y salida para que Emma te ayude.")
     st.info("Consejo: asegúrate de tener el micrófono habilitado en tu navegador 🎤")
 
 st.divider()
 st.markdown("### 🎤 Habla con Emma")
-st.write("Haz clic en el botón y empieza a hablar. Emma escuchará lo que digas y lo traducirá automáticamente 🪶")
+st.write("Haz clic en el botón y empieza a hablar. Emma escuchará lo que digas y lo traducirá automáticamente ")
 
 # ==========================
 # BOTÓN DE RECONOCIMIENTO DE VOZ
 # ==========================
-stt_button = Button(label="🎙️ Escuchar con Emma", width=300, height=50, button_type="success")
+stt_button = Button(label=" Escuchar con Emma", width=300, height=50, button_type="success")
 
 stt_button.js_on_event("button_click", CustomJS(code="""
     var recognition = new webkitSpeechRecognition();
@@ -111,7 +111,7 @@ result = streamlit_bokeh_events(
 if result:
     if "GET_TEXT" in result:
         user_text = result.get("GET_TEXT")
-        st.markdown(f"<div class='note-box'>🗒️ <b>Emma escuchó:</b><br>{user_text}</div>", unsafe_allow_html=True)
+        st.markdown(f"<div class='note-box'> <b>Emma escuchó:</b><br>{user_text}</div>", unsafe_allow_html=True)
 
     # Crear carpeta temporal
     os.makedirs("temp", exist_ok=True)
@@ -119,7 +119,7 @@ if result:
     translator = Translator()
 
     st.divider()
-    st.markdown("### 🌍 Configuración de Traducción")
+    st.markdown("### Configuración de Traducción")
 
     # Idioma de entrada
     in_lang = st.selectbox(
@@ -227,7 +227,6 @@ if result:
 
     remove_files(7)
 
-st.markdown("<div class='footer'>Hecho con 💜 por Emma — Tu asistente traductora personal</div>", unsafe_allow_html=True)
 
     
 
