@@ -78,7 +78,7 @@ st.markdown("<div class='title'>CYRA - Cyber Translator 2077 🤖</div>", unsafe
 st.markdown("<div class='subtitle'>Traducción por voz en tiempo real con inteligencia sintética</div>", unsafe_allow_html=True)
 
 try:
-    image = Image.open('cyra_avatar.jpg')
+    image = Image.open('cyra_avatar.png')
     st.image(image, width=320, caption="CYRA - Neural Linguistic System v2.1")
 except:
     st.warning("⚠️ Añade una imagen llamada 'cyra_avatar.jpg' para personalizar la interfaz visual del asistente.")
